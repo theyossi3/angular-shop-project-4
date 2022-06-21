@@ -1,0 +1,14 @@
+<div>
+
+    <ng-container *ngIf="!user">
+        <app-login></app-login>
+
+    </ng-container>
+
+    <ng-container *ngIf="(user && !user.isAdmin)">
+        <app-cart></app-cart>
+    </ng-container>
+    <ng-container *ngIf="(user && user.isAdmin)">
+        <app-admin></app-admin>
+    </ng-container>
+</div>

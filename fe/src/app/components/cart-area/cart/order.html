@@ -1,0 +1,75 @@
+<h1> creat oreder </h1>
+<hr size="6" width="100%" color="black">
+<mat-dialog-content>
+
+    <aside>
+        <button mat-button (click)="onNoClick()">continue shopping</button>
+        <table>
+            <th class="a" colspan="3">
+                cart
+            </th>
+            <tr>
+
+                <th>product</th>
+                <th>quant</th>
+                <th>price</th>
+            </tr>
+            <ng-template ngFor let-item="$implicit" [ngForOf]="data" let-i="index">
+
+
+                <tr>
+
+                    <td>
+                        {{item.product.name}}
+                    </td>
+                    <td>
+                        {{item.quant}}
+                    </td>
+                    <td>
+                        {{item.totalPrice}} ₪
+                    </td>
+                </tr>
+
+            </ng-template>
+            <tr>
+                <td class="a" colspan="3">total price: {{total}}</td>
+
+            </tr>
+        </table>
+    </aside>
+    <main>
+        <h3> shipping info</h3>
+
+        <form #myForm="ngForm" (submit)="addorder()">
+            <label>city</label><br>
+            <input type="text" name="city" #city="ngModel" [(ngModel)]="order.city" required minlength="3"><br>
+            <span *ngIf="city.errors?.required && city.touched">Missing city.</span>
+            <span *ngIf="city.errors?.minlength  ">city must be more than 3 letters.</span>
+            <label>addres</label><br>
+            <input type="text" name="addres" #addres="ngModel" [(ngModel)]="order.addres" required minlength="3">
+            <span *ngIf="addres.errors?.required && addres.touched">Missing addres.</span>
+            <span *ngIf="addres.errors?.minlength ">city must be more than 3 letters.</span>
+
+            <label>shipping date</label> <br>
+            <input type="date" #date="ngModel" name="date" [(ngModel)]="order. deliverydate" required>
+            <span *ngIf="date.errors?.required && date.touched">Missing date.</span>
+
+            <label> paymanet:</label>
+            <hr size="6" width="120%" color="black">
+
+            <label>credit card</label><br>
+            <input type="text" name="payment" #payment="ngModel" [(ngModel)]="order.payment" required minlength="6"
+                pattern="[0-9]+"><br>
+            <mat-icon>payment</mat-icon>
+            <span *ngIf="payment.errors?.required && payment.touched">Missing credit card.</span>
+            <span *ngIf="payment.errors?.minlength">credit must be more than 6 letters.</span>
+            <span *ngIf="payment.errors?.pattern"> credit card canot contain letters </span>
+
+
+            <input type="submit" [mat-dialog-close] [disabled]="myForm.form.invalid" name="submit" value="order">
+
+        </form>
+
+    </main>
+
+</mat-dialog-content>

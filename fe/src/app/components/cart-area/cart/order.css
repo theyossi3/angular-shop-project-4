@@ -1,0 +1,84 @@
+mat-dialog-content {
+   background-image:"fe/imege/pic1.jpg" ;
+    backface-visibility: hidden;
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 15% 80% 5%;
+}
+.backdropBackground {
+    background-color: #bbbbbbf2;
+    backdrop-filter: blur(4px);
+  }
+  label{
+position: left;
+  }
+  
+aside{
+    width: 150%;
+    border:1px crimson;
+  }
+
+h1{
+ 
+    grid-column: span 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+} 
+h3{ 
+      height: inherit;
+   text-align:center;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+ }
+ 
+.buttonaria{
+
+    position: fixed;
+}
+ 
+h4{ 
+    float: left;
+ position:fixed;
+ 
+}
+td.a,th.a{ 
+     border: 3px solid red ;
+     font-size: large;
+     text-align: center;
+    }
+    th.a{
+        background-color: crimson;
+    }
+    th, td    {
+        border: 1px solid black;    
+        text-align: center;
+            overflow: hidden; ;
+            padding: 10px;
+             text-align: left;
+      }
+      table{
+        width: 300px;
+        margin: auto;
+        text-align: left;
+      }
+
+    main {
+        grid-column: span 5;
+    }
+    form {
+        width: 300px;
+        margin: auto;
+        text-align: left;
+    }
+    
+    input, button, label {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: large;
+        margin-bottom: 20px;
+    }

@@ -1,0 +1,39 @@
+<div class="box">
+
+    <h1> my cart </h1>
+    <div class="card">
+        <table>
+            <tr>
+                <th>remove</th>
+                <th>product</th>
+                <th>quant</th>
+                <th>price</th>
+            </tr>
+            <tr *ngFor=" let c  of cartitemmodel " [class]="c.product.name">
+
+                <td> <span (click)="removefromcart(c)" class='material-icons'>close</span></td>
+                <td>
+                    {{c.product.name}}
+                </td>
+                <td>
+                    {{c.quant}}
+                </td>
+                <td>
+                    {{c.totalPrice}} ₪
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+<label> total : </label>
+{{totalcost| currency:"ILS"}}
+<br />
+<div *ngIf="cartitems && cartactive">
+    <button (click)="openDialog()">oreder</button><button>cancel</button>
+</div>
+<div *ngIf="!(cartactive)">
+    <button (click)="downlodereceipt()">
+        <mat-icon>print</mat-icon>downlode` receipt
+    </button> <button (click)="neworder()">neworder</button>
+</div>

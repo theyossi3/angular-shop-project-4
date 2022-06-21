@@ -1,0 +1,12 @@
+<div>
+    <app-logo></app-logo>
+    <app-auth-menu></app-auth-menu>
+    <h1>shoping online</h1>
+
+    <ng-container *ngIf="user">
+        <app-search></app-search>
+        <a *ngIf="!isAdmin" routerLink="/order">
+            <button mat-button>orders history</button>
+        </a>
+    </ng-container>
+</div>

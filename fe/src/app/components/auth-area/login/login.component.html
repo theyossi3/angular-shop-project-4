@@ -1,0 +1,18 @@
+<div class="box">
+
+    <h2>Login</h2>
+
+    <form (submit)="login()">
+
+        <label>Username: </label>
+        <input type="email" name="email" [(ngModel)]="credentials.email">
+
+        <label>Password: </label>
+        <input type="password" name="password" [(ngModel)]="credentials.password">
+
+        <button>Login</button>
+
+    </form>
+
+    <button routerLink="/register">Register</button>
+</div>

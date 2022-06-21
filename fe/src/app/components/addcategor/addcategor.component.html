@@ -1,0 +1,12 @@
+<div class="box">
+    <form #myForm="ngForm" (submit)="addc()">
+
+        <label>category: </label> <input #name="ngModel" type="text" name="name" [(ngModel)]="category.name"
+            pattern="^[A-Z].*$" required minlength="3"> <br>
+        <span *ngIf="name.errors?.pattern && name.touched">Category must start with a capital letter.</span>
+        <span *ngIf="name.errors?.required && name.touched">Missing Category.</span>
+        <span *ngIf="name.errors?.minlength && name.touched">Category must be more than3
+            letters.</span>
+        <button type="submit" [disabled]="myForm.form.invalid">register</button>
+    </form>
+</div>

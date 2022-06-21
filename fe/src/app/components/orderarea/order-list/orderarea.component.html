@@ -1,0 +1,26 @@
+<div>
+    <app-please-wait *ngIf="!orders"></app-please-wait>
+    <table>
+        <tr>
+            <th>delivery date</th>
+            <th>city</th>
+            <th>addres</th>
+            <th>item amount</th>
+            <th>total price</th>
+            <th>creation date</th>
+        </tr>
+        <tr *ngFor="let p of orders| paginate:   { itemsPerPage:6 , currentPage: S }">
+
+            <td>{{p.deliverydate| date: 'dd/MM/yyyy' }}</td>
+            <td>{{p.city}} </td>
+            <td>{{p.addres}}</td>
+            <td>{{p.totalprudacts}}</td>
+            <td>{{p.totalprice}} ₪</td>
+            <td>{{p.ordercreatedate | date: 'dd/MM/yyyy'}}</td>
+
+        </tr>
+
+        <pagination-controls ngClass="page" (pageChange)="S = $event" class="float-right">
+        </pagination-controls>
+    </table>
+</div>

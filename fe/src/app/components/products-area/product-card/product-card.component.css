@@ -1,0 +1,35 @@
+ img {
+      background-position: center center;
+    position:relative;
+    width:80% ;
+    height: 60px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    vertical-align: middle;
+}
+ 
+ .box button{
+    cursor: pointer;
+    border-radius: 50%;
+    background-color:rgb(206, 25, 40);
+    border: none;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin: 4px 2px; 
+ 
+
+}
+ 
+  
+input[type=number]{
+
+    width: 30px;
+
+}
+a {
+    margin-left: auto;
+}
+ 

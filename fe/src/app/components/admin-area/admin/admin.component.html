@@ -1,0 +1,11 @@
+<h3>admin menu</h3>
+
+<a *ngIf="admin" routerLink="/products/new">
+    <button mat-button>Add Product</button>
+</a><br>
+<a *ngIf="admin" routerLink="/order">
+    <button mat-button>orders</button>
+</a><br>
+<a *ngIf="admin" routerLink="/addcategor">
+    <button mat-button>add category</button>
+</a>

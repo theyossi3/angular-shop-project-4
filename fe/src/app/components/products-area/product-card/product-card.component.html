@@ -1,0 +1,33 @@
+<div class="box" style="height: 42%;">
+    <a [routerLink]="'/products/details/' + product.id">
+        <img [src]="imageUrl + product.imageName" />
+    </a>
+    <div class="card-body">
+
+        <h4 class="card-title">product: {{product.name}}</h4>
+
+        <p class="card-text">price: {{product.price }} ₪</p>
+
+        <div class="center" *ngIf="!admin">
+            <button (click)="openDialog()"> Add <mat-icon>add_shopping_cart</mat-icon>
+            </button>
+
+        </div>
+        <div class="center" *ngIf="admin">
+            <button class="admin" routerLink="/products/edit/{{product.id}}">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button class="admin" (click)="delete()">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+
+    </div>
+
+    <div>
+
+
+
+    </div>
+
+</div>

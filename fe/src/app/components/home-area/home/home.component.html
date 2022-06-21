@@ -1,0 +1,22 @@
+<div>
+    <ng-container *ngIf="!user">
+        <h4>מידע על האתר </h4>
+        <article>
+            אתר מכירות המוביל ישראל
+            <br>למכירת מוצרי סופר
+            <br> נוצר על ידי יוסי נימני
+            האיש האגדה
+            <br>
+            <h4> {{count}} :מספר ההזמנות שבוצעו באתר זה </h4>
+        </article>
+        <img src="https://previews.123rf.com/images/jemastock/jemastock1706/jemastock170605043/79880626-colorful-poster-shopping-online-with-shopping-cart-and-process-of-buying-online-vector-illustration.jpg"
+            alt="cart">
+
+    </ng-container>
+    <ng-container *ngIf="user">
+
+        <app-product-list></app-product-list>
+
+    </ng-container>
+
+</div>

@@ -1,0 +1,18 @@
+<img [src]="imageUrl + data.imageName" />
+
+<h1 mat-dialog-title>{{data.name}}</h1>
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label> product amount: </mat-label>
+        <input matInput type="number" (click)="changeprice(amount)" defaultValue=1 [(ngModel)]="amount" name="amount "
+            min="1" max="{{data.stock}}">
+    </mat-form-field>
+
+</div>
+<div class="buttonaria" mat-dialog-actions>
+    <h3>&nbsp;&nbsp;unit price :{{data.price}} ₪ &nbsp;&nbsp; total price :{{price}} ₪ &nbsp;&nbsp;</h3>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button (click)="addtocart(amount)" [mat-dialog-close]="data.name" cdkFocusInitial>Add<mat-icon>
+            shopping_cart</mat-icon></button>
+
+</div>

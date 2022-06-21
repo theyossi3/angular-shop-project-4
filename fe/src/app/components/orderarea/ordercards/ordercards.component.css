@@ -1,0 +1,11 @@
+th, td    {
+    border: 1px solid black;    
+    text-align: center;
+overflow: hidden; ;
+  }
+  table{
+    height: 50px;
+  
+  table-layout: fixed;
+ 
+  }

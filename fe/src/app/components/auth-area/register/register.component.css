@@ -1,0 +1,54 @@
+form {
+ max-height: 450px;
+    width:100%;
+    margin: auto;
+    text-align: left; 
+    overflow-y: scroll;
+}
+ 
+input,  label {
+    float:left;
+	width: 150px;
+    box-sizing: border-box;
+    font-size: x-large;
+    margin-bottom: 30px;
+}
+button{  
+    float:right;
+	width: 150px;
+    box-sizing: border-box;
+    font-size: x-large;
+    margin-bottom: 30px;}
+span {
+    position: absolute;
+    margin: 20px;
+    color: red;
+    font-size: x-large;
+}button:hover {
+    opacity: 0.8;
+  }
+  
+  #prevBtn {
+    background-color: #bbbbbb;
+  }
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;  
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: #04AA6D;
+  }

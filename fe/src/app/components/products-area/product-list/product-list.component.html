@@ -1,0 +1,14 @@
+<div>
+    <app-please-wait *ngIf="!products"></app-please-wait>
+    <nav>
+
+        <button (click)="getall()">
+            all </button>
+        <button *ngFor="let c of category" (click)="UpdateCategory(c.id)" routerLinkActive="active">
+            {{c.name}} </button>
+    </nav>
+    <app-product-card *ngFor="let p of products| paginate: 
+    { itemsPerPage:10, currentPage: S }" [product]="p"></app-product-card>
+    <pagination-controls ngClass="page" (pageChange)="S = $event" class="float-right">
+    </pagination-controls>
+</div>

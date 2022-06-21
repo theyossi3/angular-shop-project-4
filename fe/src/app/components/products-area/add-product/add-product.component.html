@@ -1,0 +1,34 @@
+<div class="box">
+    <div *ngIf="admin">
+        <form #myForm="ngForm" (submit)="send()">
+
+
+            <label>Name: </label>
+            <input #nameBox="ngModel" type="text" [(ngModel)]="product.name" name="name" required pattern="^[A-Z].*$">
+            <span *ngIf="nameBox.errors?.required && nameBox.touched">Missing name.</span>
+            <span *ngIf="nameBox.errors?.pattern && nameBox.touched">Name must start with a capital letter.</span>
+
+            <label>amount: </label>
+            <input #amountBox="ngModel" type="number" step="1.0" [(ngModel)]="product.stock" name="stock" required>
+            <span *ngIf="amountBox.invalid && amountBox.touched">Missing amount.</span>
+
+            <label>Price: </label>
+            <input #priceBox="ngModel" type="number" step="0.10" [(ngModel)]="product.price" name="price" required>
+            <span *ngIf="priceBox.invalid && priceBox.touched">Missing price.</span>
+
+            <label>category: </label>
+            <select #selectBox="ngModel" [(ngModel)]="product.categoryId" name="category" required>
+                <option *ngFor="let c of category" [value]="c.id">{{c.name}}</option>
+
+
+            </select> <span *ngIf="selectBox.invalid && selectBox.touched">Missing category.</span><br />
+            <label>Image: </label>
+            <input type="file" accept="image/*" (change)="saveImage($event)" (blur)="imageBlur()" required>
+            <span *ngIf="imageVisited && !product.image">Missing image.</span>
+
+            <button [disabled]="myForm.form.invalid">Add</button>
+
+        </form>
+
+    </div>
+</div>

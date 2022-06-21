@@ -1,0 +1,20 @@
+.box{
+ 
+  Overflow :hidden;
+height: 400px;
+
+}
+.card{  Overflow-y: scroll;
+  height: 300px;}
+ 
+  th, td    {
+    border: 1px solid black;    
+    text-align: center;
+overflow: hidden; ;
+  }
+  table{
+    height: 50px;
+  
+  table-layout: fixed;
+  width: 300px;
+  }

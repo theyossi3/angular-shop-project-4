@@ -1,0 +1,87 @@
+<div class="box">
+
+    <h2>Register</h2>
+
+    <form #myForm="ngForm" (submit)="register()">
+        <table>
+            <div class="tab">
+                <tr>
+
+                    <td> <label>email: </label> <input #emailbox="ngModel" type="email" name="email"
+                            [(ngModel)]="user.email" required minlength="6"> <br>
+                        <span *ngIf="emailbox.errors?.required && emailbox.touched">Missing email.</span>
+                        <span *ngIf="emailbox.errors?.minlength && emailbox.touched">email must be more than 6
+                            letters.</span>
+
+                    </td>
+                </tr>
+                <tr>
+
+                    <td> <label>Password: </label><input #passwordBox="ngModel" type="password" name="password"
+                            [(ngModel)]="user.password" required minlength="6">
+                        <span *ngIf="passwordBox.errors?.required && passwordBox.touched">Missing password.</span>
+                        <span *ngIf="passwordBox.errors?.minlength && passwordBox.touched">password must be more than 6
+                            letters.</span>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td><label> confirm Password: </label>
+                        <input #confirmPasswordBox="ngModel" type="password" name="passwordconfirm"
+                            [(ngModel)]="user.confirmPassword" required minlength="6" ngValidateEqual="password">
+
+                    </td>
+                </tr>
+            </div>
+            <div class="tab">
+                <tr>
+                    <td> <label>city: </label></td>
+                    <td> <input #cityBox="ngModel" type="text" name="city" [(ngModel)]="user.city" required>
+                        <span *ngIf="cityBox.errors?.required && cityBox.touched">Missing city name.</span>
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td> <label>address: </label></td>
+                    <td> <input #addresBox="ngModel" type="text" name="addres" [(ngModel)]="user.addres" required
+                            minlength="6">
+                        <span *ngIf="addresBox.errors?.required && addresBox.touched">Missing address.</span>
+                        <span *ngIf="addresBox.errors?.minlength && addresBox.touched">address must be more than 6
+                            letters.</span>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <label>First name: </label>
+                    </td>
+                    <td> <input #fnameBox="ngModel" type="text" name="firstName" [(ngModel)]="user.firstname"
+                            name="name" required pattern="^[A-Z].*$">
+                        <span *ngIf="fnameBox.errors?.required && fnameBox.touched">Missing first name.</span>
+                        <span *ngIf="fnameBox.errors?.pattern && fnameBox.touched">Name must start with a capital
+                            letter.</span>
+                    </td>
+
+                <tr>
+                    <td>
+                        <label> Last name: </label>
+                    </td>
+                    <td> <input #lnameBox="ngModel" type="text" name="lastName" [(ngModel)]="user.lastname" required
+                            pattern="^[A-Z].*$">
+                        <span *ngIf="lnameBox.errors?.required && lnameBox.touched">Missing lastname.</span>
+                        <span *ngIf="lnameBox.errors?.pattern && lnameBox.touched">Name must start with a capital
+                            letter.</span>
+                    </td>
+                </tr>
+            </div>
+
+            <tr>
+
+                <td>
+                    <button type="submit" [disabled]="myForm.form.invalid">register</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
